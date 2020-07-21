@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-Jul-2020, 5:16:53 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Products.OrderDetails" table="ORDERDETAILS">
+        <id name="productID" type="java.lang.String">
+            <column name="PRODUCTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="QUANTITY" />
+        </property>
+        <property name="totalPrice" type="java.lang.Double">
+            <column name="TOTALPRICE" />
+        </property>
+    </class>
+</hibernate-mapping>

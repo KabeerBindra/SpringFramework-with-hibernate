@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-Jul-2020, 6:47:13 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="mappings.Authorz" table="AUTHORZ">
+        <id name="authorId" type="int">
+            <column name="AUTHORID" />
+            <generator class="assigned" />
+        </id>
+        <property name="authorName" type="java.lang.String">
+            <column name="AUTHORNAME" />
+        </property>
+        <list name="books" inverse="false" table="BOOKS" lazy="true">
+            <key>
+                <column name="AUTHORID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="mappings.Books" />
+        </list>
+    </class>
+</hibernate-mapping>

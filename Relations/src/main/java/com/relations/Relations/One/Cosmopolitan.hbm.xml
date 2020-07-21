@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-Jul-2020, 5:22:37 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.relations.Relations.One.Cosmopolitan" table="COSMOPOLITAN">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cosmoname" type="java.lang.String">
+            <column name="COSMONAME" />
+        </property>
+        <property name="cosmoclass" type="java.lang.String">
+            <column name="COSMOCLASS" />
+        </property>
+        <set name="details" table="Registeration" inverse="false" lazy="true">
+            <key>
+                <column name="ID" />
+            </key>
+            <many-to-many class="com.relations.Relations.One.World"  column="WORLDID"/>
+        </set>
+    </class>
+</hibernate-mapping>

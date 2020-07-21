@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-Jul-2020, 10:38:37 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hql.Kapoors" table="KAPOORS">
+        <id name="name" type="java.lang.String">
+            <column name="NAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="films" type="java.lang.String">
+            <column name="FILMS" />
+        </property>
+        <property name="hits" type="java.lang.String">
+            <column name="HITS" />
+        </property>
+        <property name="besthits" type="java.lang.String">
+            <column name="BESTHITS" />
+        </property>
+        <property name="salary" type="java.lang.Float">
+            <column name="SALARY" />
+        </property>
+        <property name="nepotism" type="int">
+            <column name="NEPOTISM" />
+        </property>
+    </class>
+</hibernate-mapping>

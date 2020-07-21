@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-Jul-2020, 5:22:37 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.relations.Relations.One.World" table="WORLD">
+        <id name="worldid" type="int">
+            <column name="WORLDID" />
+            <generator class="assigned" />
+        </id>
+        <property name="continents" type="java.lang.String">
+            <column name="CONTINENTS" />
+        </property>
+        <property name="planets" type="java.lang.String">
+            <column name="PLANETS" />
+        </property>
+        <set name="abc" table="COSMOPOLITAN" inverse="false" lazy="true">
+            <key>
+                <column name="WORLDID" />
+            </key>
+            <many-to-many class="com.relations.Relations.One.Cosmopolitan"  column="ID"/>
+        </set>
+    </class>
+</hibernate-mapping>
