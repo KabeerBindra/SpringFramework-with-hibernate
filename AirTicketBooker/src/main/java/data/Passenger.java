@@ -1,6 +1,6 @@
 package data;
 
-public class Passenger {
+public class Passenger implements Interface {
 private String num;
 private String password;
 public Passenger() {
@@ -27,9 +27,14 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public String Hello() {
-	return "Congratualation  The tickets have booked for "+num+"of travellers";
-	
+//public String Hello() {
+//	return "Congratualation  The tickets have booked for \t  "+  num + " \t of travellers";
+//	
+@Override
+public void book(String num, String password) {
+	System.out.println("Congratualation your tickets have been booked and your password is  \t"+ num  +"\t"+  password);
 	
 }
+	
+
 }

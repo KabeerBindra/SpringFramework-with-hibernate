@@ -83,6 +83,14 @@
 		</spring:bind>
 		</td>
 		<td>
+		<br><br>
+		<hr>
+			<td>Enter the Password to Login</td>
+		<td><spring:bind path="password">
+		<input type="text" name="${status.expression}" value="${status.value }"/>
+		</spring:bind>
+		</td>
+		<td>
 		<input type="submit" value="book">
 		</td>
 		</form>
