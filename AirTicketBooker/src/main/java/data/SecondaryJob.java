@@ -4,12 +4,14 @@ public class SecondaryJob {
 	 String status1 ,seats;
 public void authenticate(String pwd) {
 	
-	if(pwd.equals("1998")) {
+	if(pwd.equals("karan")) {
 		String pass = "User is authenticated";
 		 authenticating = "true";
+			System.out.println("authenticated");
 	}
 	else {
 		String pass = "User is not  authenticated"; 		authenticating = "false";
+		System.out.println(" Not authenticated");
 	}
 }
 public void checkSeats(String num) {
@@ -18,15 +20,18 @@ public void checkSeats(String num) {
 	if(authenticating.compareTo("true")==0) {
 		if(avail>total_booked) {status1 = "YOu have booked"+total_booked+"seats";
 		seats = "true";
+		System.out.println(status1);
 		}
+	}
 		else {
 			status1 = "Seats are not available";
 			seats = "false";
+			System.out.println(" Not authenticated"+status1);
 		}
-	}
+	
 	
 }
 public void reward() {
-	System.out.println("You have been authenticated and your seats have been booked");
+	System.out.println("We appreciate you visiting our website");
 }
 }

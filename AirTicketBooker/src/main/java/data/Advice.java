@@ -15,7 +15,8 @@ public class Advice implements MethodBeforeAdvice, AfterReturningAdvice {
 
 	@Override
 	public void before(Method method, Object[] args, Object target) throws Throwable {
-System.out.println("i was cALLED BEFORE");
+System.out.println("i was CALLED BEFORE");
+
 		second.authenticate(args[1].toString());
 		second.checkSeats(args[0].toString());
 	}
