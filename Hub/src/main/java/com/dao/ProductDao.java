@@ -1,30 +1,22 @@
 package com.dao;
-import model.Product;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class ProductDao {
 
-    private List<Product> productList;
+import com.model.*;
 
-    public List<Product> getProductList() {
-        Product product1 = new Product();
+public interface ProductDao {
 
-        product1.setProductName("Guitar1");
-        product1.setProductCategory("Instrument");
-        product1.setProductDescription("This is a fender strat guitar!");
-        product1.setProductPrice(1200);
-        product1.setProductCondition("new");
-        product1.setProductStatus("Active");
-        product1.setUnitInStock(11);
-        product1.setProductManufacturer("Fender");
 
-        productList=new ArrayList<Product>();
-        productList.add(product1);
+    void addProduct(Product product);
 
-        return productList;
-    }
+    Product getProductById(String id);
+
+    List<Product> getAllProducts();
+
+    void deleteProduct(String id);
 }
-
