@@ -17,18 +17,16 @@
                 </div>
 
                 <div class="col-md-5">
-                    <h3>${product.productName}</h3>
-                    <p>${product.productDescription}</p>
+                    <h3>${product.id}</h3>
+                    <p>${product.name}</p>
                     <p>
-                       <strong>Manufacturer</strong> : ${product.productManufacturer}
+                       <strong>Category</strong> : ${product.category}
                     </p>
                     <p>
-                        <strong>Category</strong> : ${product.productCategory}
+                        <strong>Status</strong> : ${product.status}
                     </p>
-                    <p>
-                        <strong>Condition</strong> : ${product.productCondition}
-                    </p>
-                    <h4>${product.productPrice} USD</h4>
+                
+                    <h4>${product.price} USD</h4>
                 </div>
             </div>
         </div>

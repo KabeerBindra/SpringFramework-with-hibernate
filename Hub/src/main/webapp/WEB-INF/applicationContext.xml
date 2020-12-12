@@ -17,47 +17,70 @@ http://www.springframework.org/schema/util
  http://www.springframework.org/schema/util/spring-util-2.0.xsd
 http://www.springframework.org/schema/tx 
 http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
-<bean  class="com.dao.ProductDaoImpl"></bean>
-
-
-<ctx:component-scan base-package="com.home"></ctx:component-scan>
-<ctx:component-scan base-package="com.model.Product"></ctx:component-scan>
+<bean id="Product"  class ="com.model.Product"></bean>
+<!-- <bean class="com.dao.ProductDaoImpl"></bean> -->
+ 
+<ctx:component-scan base-package="com"></ctx:component-scan>
+<!-- <ctx:component-scan base-package="com.model.Product"></ctx:component-scan>   -->
 <ctx:annotation-config></ctx:annotation-config>
 <mvc:annotation-driven/>
-<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/karan"></property>
-<property name="user" value="karandeep"></property>
+
+<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+<property name="url" value="jdbc:mysql://localhost:3306/karandeep"></property>
+<property name="username" value="karandeep"></property>
 <property name="password" value="diljitsingh98@"></property>
 
-<property name="minPoolSize" value="5" />
-<property name="maxPoolSize" value="10" />
-<property name="maxIdleTime" value="30000" />
+
+
+
+
+
 </bean>
 
-<bean id="Product" class ="com.model.Product"></bean>
 
 
 
 
 <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 <property name="dataSource" ref="myDataSource" />
-<property name="packagesToScan" value="com.model" />
+<property name="packagesToScan" value="com" />
 
 <property name="hibernateProperties">
 <props>
-<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
 <prop key="hibernate.show_sql">true</prop>
 <prop key="hibernate.hbm2ddl.auto"> update</prop>
 <prop key="hibernate.format_sql">true</prop>
 
+
 </props>
 </property>  
+
 </bean>
-<bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+<!-- <bean id="myTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 <property name="sessionFactory" ref="sessionFactory" />
+</bean>  -->
+<!-- <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">
+
+<property name="sessionFactory" ref="sessionFactory"/>
+
+</bean> -->
+
+
+<!-- <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="TransactionManager">
+
+<property name="sessionFactory" ref="sessionFactory"/>
+
 </bean>
 
-<tx:annotation-driven transaction-manager="myTransactionManager"  proxy-target-class="true"></tx:annotation-driven>
+<tx:annotation-driven proxy-target-class="true" transaction-manager="TransactionManager"/> -->
+
+
+<!-- <tx:annotation-driven transaction-manager="transactionManager" ></tx:annotation-driven>  -->
+
+ <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
 </beans>

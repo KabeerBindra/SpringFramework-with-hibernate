@@ -22,14 +22,14 @@
                 <th></th>
             </tr>
             </thead>
-            <c:forEach items="${products}" var="product">
+            <c:forEach items="${products}" var="pro">
                 <tr>
                     <td><img src="#" alt="image"/></td>
-                    <td>${product.productName}</td>
-                    <td>${product.productCategory}</td>
-                    <td>${product.productCondition}</td>
-                    <td>${product.productPrice} USD</td>
-                    <td><a href="<spring:url value="/productList/viewProduct/${product.productId}" />"
+                    <td>${pro.name}</td>
+                    <td>${pro.category}</td>
+                    <td>${pro.status}</td>
+                    <td>${pro.price} Rupees</td>
+                    <td><a href="<spring:url value="/productList/viewProduct/${pro.id}" />"
                     ><span class="glyphicon glyphicon-info-sign"></span></a></td>
                 </tr>
             </c:forEach>

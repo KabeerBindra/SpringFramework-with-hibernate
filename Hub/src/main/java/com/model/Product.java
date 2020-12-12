@@ -1,102 +1,61 @@
 package com.model;
 
-import javax.faces.bean.ManagedBean;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.web.multipart.MultipartFile;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import javax.persistence.*;
+
 
 @Entity
-@Table(name = "Product")
-
+ @Table(name="Product") 
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String productId;
-    private String productName;
-    private String productCategory;
-    private String productDescription;
-    private double productPrice;
-    private String productCondition;
-    private String productStatus;
-    private int unitInStock;
-    private String productManufacturer;
 
-    public String getProductId() {
-        return productId;
-    }
+	public Product() {
+		super();
+	}
 
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(String productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public String getProductCondition() {
-        return productCondition;
-    }
-
-    public void setProductCondition(String productCondition) {
-        this.productCondition = productCondition;
-    }
-
-    public String getProductStatus() {
-        return productStatus;
-    }
-
-    public void setProductStatus(String productStatus) {
-        this.productStatus = productStatus;
-    }
-
-    public int getUnitInStock() {
-        return unitInStock;
-    }
-
-    public void setUnitInStock(int unitInStock) {
-        this.unitInStock = unitInStock;
-    }
-
-    public String getProductManufacturer() {
-        return productManufacturer;
-    }
-
-    public void setProductManufacturer(String productManufacturer) {
-        this.productManufacturer = productManufacturer;
-    }
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)  private int id;
+    private String name;
+    private String category;
+    private String status;
+    private double price;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+   
+	 @Override
+		public String toString() {
+			return "Product [id=" + id + ", name=" + name + ", category=" + category + ", status=" + status + ", price="
+					+ price + "]";
+		}
 }
+
 
