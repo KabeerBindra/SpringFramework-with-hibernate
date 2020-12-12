@@ -25,6 +25,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
-	<classpathentry kind="lib" path="C:/Users/pc/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/ORM/src/main/webapp/WEB-INF/javax.faces-2.2.8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
